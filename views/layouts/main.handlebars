@@ -9,6 +9,53 @@
 </head>
 
 <body>
+  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+    <h1>
+      User Registry
+    </h1>
+    <img class="w3-image" src="../img/p2-BG.jpg" alt="Architecture" width="1500" height="800">
+    <div class="w3-display-middle w3-margin-top w3-center">
+      <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Login</b></span> <span class="w3-hide-small w3-text-light-grey">________</span></h1>
+    {{#if logged_in}}
+    <nav>
+      <button class="btn" id="logout">logout</button>
+    </nav>
+    {{/if}}
+  </header>
+  <div class="w3-content w3-padding" style="max-width:1564px"></div>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superhero card game</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
   <header class="display-flex justify-space-between align-center p-2">
     <h1>
       User Registry
@@ -31,4 +78,4 @@
   {{/if}}
 </body>
 
-</html>
+</html> --}}
