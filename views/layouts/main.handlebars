@@ -9,16 +9,20 @@
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
+  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
     <h1>
       User Registry
     </h1>
+    <img class="w3-image" src="../img/p2-BG.jpg" alt="Architecture" width="1500" height="800">
+    <div class="w3-display-middle w3-margin-top w3-center">
+      <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Login</b></span> <span class="w3-hide-small w3-text-light-grey">________</span></h1>
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
     </nav>
     {{/if}}
   </header>
+  <div class="w3-content w3-padding" style="max-width:1564px"></div>
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
