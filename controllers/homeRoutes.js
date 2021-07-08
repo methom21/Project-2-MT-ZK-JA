@@ -15,10 +15,13 @@ router.get('/', withAuth, async (req, res) => {
       users,
       logged_in: req.session.logged_in,
     });
+    
   } catch (err) {
     res.status(500).json(err);
   }
+  
 });
+
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -44,7 +47,9 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  // res.render('login');
 });
+
+
 
 module.exports = router;
