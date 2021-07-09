@@ -2,6 +2,12 @@ const router = require('express').Router();
 const { Hero } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// list all heros
+
+
+
+
+
 
 router.post('/', withAuth, async (req, res) => {
 try 
@@ -15,6 +21,9 @@ catch (err)
 res.status(400).json(err);
 }
 });
+
+
+
 
 
 router.delete('/:id', withAuth, async (req, res) => {
