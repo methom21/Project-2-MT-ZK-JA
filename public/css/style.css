@@ -27,9 +27,13 @@
 }
 form input {
     margin-bottom: 10px;
+    background-color: RGBA(255, 255, 255, .5);
+    border: 2.5px solid black;
+    
 
 }
 button {
+    margin-bottom: 10px;
     --borderWidth: 5;
     --boxShadowDepth: 8;
     --buttonColor: #f00;
