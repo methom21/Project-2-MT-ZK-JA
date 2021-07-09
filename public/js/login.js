@@ -48,6 +48,15 @@ document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
 
+<<<<<<< HEAD
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+=======
+
+function loginFunction() {
+  document.getElementById("hideLogin").style.display = "block";
+}
+  
+
+>>>>>>> 07e82c4598a91ce8ce5cbe1ac2fa172a48a0f2dd
