@@ -8,65 +8,6 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-<<<<<<< HEAD
-  <body>
-    <header
-      class="w3-display-container w3-content w3-wide"
-      style="max-width:1500px;"
-      id="home"
-    >
-      <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-          <a href="#home" class="w3-bar-item w3-button"><b>DC & Marvel</b>
-            Super Roster</a>
-          <!-- Float links to the right. Hide them on small screens -->
-          <div class="w3-right w3-hide-small">
-            <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-            <a href="#about" class="w3-bar-item w3-button">About</a>
-            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-            {{#if logged_in}}<button
-                class="w3-bar-item w3-button"
-                id="logout"
-              >logout</button>{{/if}}
-          </div>
-        </div>
-      </div>
-      {{!-- {{{ body }}} --}}
-      <img
-        class="w3-image"
-        src="/img/p2-BG.jpg"
-        alt="image"
-        width="1500"
-        height="800"
-      />
-      <div class="w3-display-middle w3-margin-top w3-center">
-        <h1 class="w3-xxlarge w3-text-white"><span
-            class="w3-padding w3-black w3-opacity-min"
-          ><b></b></span>
-          <span class="w3-hide-small w3-text-light-grey">{{{body}}}</span></h1>
-          {{#if logged_in}}<div class="boxBorder3 col-3">
-        <input
-          id="heroSearch"
-          type="text"
-          class="form-control"
-          placeholder="Enter Hero Name"
-          aria-label="Enter Hero Name"
-          aria-describedby="button-addon2"
-        />
-        <button
-          type="button"
-          id="button-addon2"
-        >
-          Search
-        </button>
-      </div>{{/if}}
-      </div>
-    </header>
-    <div class="w3-content w3-padding" style="max-width:1564px"></div>
-    <main class="container container-fluid mt-5">
-    </main>
-    <footer>
-=======
 <body>
   <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
     <div class="w3-top">
@@ -84,6 +25,20 @@
     {{!-- {{{ body }}} --}}
     <img class="w3-image" src="/img/p2-BG.jpg" alt="image" width="1500" height="800" >
     <div class="w3-display-middle w3-margin-top w3-center">
+      {{#if logged_in}}<div class="boxBorder3 col-3">
+  <input
+    id="heroSearch"
+    type="text"
+    class="form-control"
+    placeholder="Enter Hero Name"
+    aria-label="Enter Hero Name"
+    aria-describedby="button-addon2"
+  />
+  <button type="button" id="button-addon2">
+    Search
+  </button>
+
+</div>{{/if}}
  <span class="">{{{body}}}</span>
   </header>
   <div class="w3-content w3-padding" style="max-width:1564px"></div>
@@ -92,7 +47,6 @@
   <footer>
       
   </footer>
->>>>>>> 07a65433e401d211cb9cff717eb7be9dbf25853b
 
     </footer>
   {{#if logged_in}}
