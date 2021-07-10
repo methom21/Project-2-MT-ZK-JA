@@ -5,6 +5,7 @@ const axios = require('axios');
 
 router.get(`/:hero`,withAuth, async (req,res)=>{
     const heroName = req.params.hero;
+<<<<<<< HEAD
     const heroData = await axios.get(`https://superheroapi.com/api/4085762414794326/search/${heroName}`);
     res.json(heroData.data.results[0].name)
     console.log(heroData.data.results[0].name);
@@ -22,6 +23,10 @@ router.get(`/:hero`,withAuth, async (req,res)=>{
     //   $("#humidDisplay" + (i + 1)).text(weathData.list[i].main.humidity);
     // }
       
+=======
+    const heroData = await axios.get(`https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${heroName}`);
+    res.json(heroData.data.results[0])
+>>>>>>> a0a8257b6e141f3c8961f264ab2b292af539ed65
 })
 
 
