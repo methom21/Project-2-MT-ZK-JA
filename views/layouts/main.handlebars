@@ -24,20 +24,7 @@
   </div>
     <img class="w3-image" src="/img/p2-BG.jpg" alt="image" width="1500" height="800" >
     <div class="w3-display-middle w3-margin-top w3-center">
-      {{#if logged_in}}<div class="boxBorder3 col-3">
-  <input
-    id="heroSearch"
-    type="text"
-    class="form-control"
-    placeholder="Enter Hero Name"
-    aria-label="Enter Hero Name"
-    aria-describedby="button-addon2"
-  />
-  <button type="button" id="button-addon2">
-    Search
-  </button>
-
-</div>{{/if}}
+      {{#if logged_in}}<a href="/homepage"></a>{{/if}}
  <span class="">{{{body}}}</span>
   </header>
   <div class="w3-content w3-padding" style="max-width:1564px"></div>
@@ -48,9 +35,7 @@
   </footer>
 
     </footer>
-  {{#if logged_in}}
-      <script src="/js/search.js"></script>
-    {{/if}}
+ 
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
