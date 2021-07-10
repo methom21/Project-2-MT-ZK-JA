@@ -12,6 +12,10 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     clip-path: 
     polygon(
       0% 5%,     /* top left */
@@ -36,13 +40,13 @@ button {
     margin-bottom: 10px;
     --borderWidth: 5;
     --boxShadowDepth: 8;
-    --buttonColor: #f00;
+    --buttonColor: #fff;
     --fontSize: 3;
     --horizontalPadding: 16;
     --verticalPadding: 8;
     background: transparent;
-    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
-    box-shadow: calc(var(--boxShadowDepth) * 1px) calc(var(--boxShadowDepth) * 1px) 0 #888;
+    border: 3px solid #eee;
+   
     color: var(--buttonColor);
     cursor: pointer;
     font-size: calc(var(--fontSize) * 1rem);
@@ -51,11 +55,22 @@ button {
     padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
     position: relative;
     transition: box-shadow 0.15s ease;
+    clip-path: 
+    polygon(
+      0% 10%,     /* top left */
+      10% 0%,     /* top left */
+      100% 0%,    /* top right */
+      100% 0%,   /* top right */
+      100% 90%,  /* bottom right */
+      90% 100%,  /* bottom right */
+      0% 100%,   /* bottom left */
+      0% 100%      /* bottom left */
+    );
   }
   button span {
     --clip: inset(0 100% 0 0);
     -webkit-clip-path: var(--clip);
-    background: var(--buttonColor);
+    background: red;
     border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
     bottom: calc(var(--borderWidth) * -1px);
     clip-path: var(--clip);
@@ -70,11 +85,14 @@ button {
     transition: clip-path 0.25s ease, -webkit-clip-path 0.25s ease;
   }
   button:hover span {
+      background-color: blue;
     --clip: inset(0 0 0 0);
   }
   button:hover {
+
     box-shadow: calc(var(--boxShadowDepth) / 2 * 1px) calc(var(--boxShadowDepth) / 2 * 1px) 0 #888;
   }
   button:active {
     box-shadow: 0 0 0 #888;
   }
+ 
