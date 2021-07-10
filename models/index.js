@@ -4,15 +4,16 @@ const Roster = require('./Roster');
 
 Hero.belongsTo(User, {through:Roster,
   foreignKey: 'user_id'
+  
 });
 
-Roster.belongsToMany(User, {through:Roster,
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
+// Roster.belongsToMany(User, {through:Roster,
+//   foreignKey: 'user_id'
+// });
 
 Hero.belongsTo(Roster, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
 

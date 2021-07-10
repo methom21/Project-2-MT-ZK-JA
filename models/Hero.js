@@ -12,23 +12,23 @@ Hero.init(
       autoIncrement: true,
     },
     name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    type: DataTypes.STRING,
+    allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+    type: DataTypes.STRING,
     },
     power:{
     type:DataTypes.INTEGER,
     },
     combat:{
-      type:DataTypes.INTEGER,
-      },
+    type:DataTypes.INTEGER,
+    },
     durability:{
-      type:DataTypes.INTEGER,
+    type:DataTypes.INTEGER,
     }, 
     strength:{
-      type:DataTypes.INTEGER,
+    type:DataTypes.INTEGER,
     },
     speed:{
     type:DataTypes.INTEGER,
