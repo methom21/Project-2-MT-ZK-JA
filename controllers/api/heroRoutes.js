@@ -1,14 +1,19 @@
 const router = require('express').Router();
 const { Hero } = require('../../models');
 const withAuth = require('../../utils/auth');
+const axios = require('axios');
 
-// list all heros
+router.get(`/:hero`,withAuth, async (req,res)=>{
+    const heroName = req.params.hero;
+    const heroData = await axios.get(`https://superheroapi.com/api/4085762414794326/search/${heroName}`);
+    res.json(heroData.data.results[0])
+})
 
 
 
 
 
-
+// actual route /api/heros/
 router.post('/', withAuth, async (req, res) => {
 try 
 {
