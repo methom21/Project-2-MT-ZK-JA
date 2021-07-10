@@ -52,8 +52,8 @@ document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
 
-function loginFunction() {
-  document.getElementById("hideLogin").style.display = "block";
-}
+// function loginFunction() {
+//   document.getElementById("hideLogin").style.display = "block";
+// }
   
 
