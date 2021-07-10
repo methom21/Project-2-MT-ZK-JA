@@ -24,9 +24,18 @@ Hero.init(
     combat:{
       type:DataTypes.INTEGER,
       },
-      power:{
-        type:DataTypes.INTEGER,
-        },
+    durability:{
+      type:DataTypes.INTEGER,
+    }, 
+    strength:{
+      type:DataTypes.INTEGER,
+    },
+    speed:{
+    type:DataTypes.INTEGER,
+    },
+    intelligence:{
+    type:DataTypes.INTEGER,
+    },
     sideline:{
       type: DataTypes.BOOLEAN,
       allowNull: false,
