@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 
 class Roster extends Model {}
 
-ProductTag.init
+Roster.init
 ({
 id:
 {
