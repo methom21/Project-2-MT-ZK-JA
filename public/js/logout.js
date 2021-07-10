@@ -1,3 +1,4 @@
+
 const inputSearch = document.getElementById('heroSearch')
 const searchButton = document.getElementById("button-addon2");
 
