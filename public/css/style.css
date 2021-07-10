@@ -4,3 +4,95 @@
 .hide {
     display: none,
 }
+
+
+.form-container {
+    border: 3px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    clip-path: 
+    polygon(
+      0% 5%,     /* top left */
+      5% 0%,     /* top left */
+      100% 0%,    /* top right */
+      100% 0%,   /* top right */
+      100% 95%,  /* bottom right */
+      95% 100%,  /* bottom right */
+      0% 100%,   /* bottom left */
+      0% 100%      /* bottom left */
+    );
+
+}
+form input {
+    margin-bottom: 10px;
+    background-color: RGBA(255, 255, 255, .5);
+    border: 2.5px solid black;
+    
+
+}
+button {
+    margin-bottom: 10px;
+    --borderWidth: 5;
+    --boxShadowDepth: 8;
+    --buttonColor: #fff;
+    --fontSize: 3;
+    --horizontalPadding: 16;
+    --verticalPadding: 8;
+    background: transparent;
+    border: 3px solid #eee;
+   
+    color: var(--buttonColor);
+    cursor: pointer;
+    font-size: calc(var(--fontSize) * 1rem);
+    font-weight: bold;
+    outline: transparent;
+    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+    position: relative;
+    transition: box-shadow 0.15s ease;
+    clip-path: 
+    polygon(
+      0% 10%,     /* top left */
+      10% 0%,     /* top left */
+      100% 0%,    /* top right */
+      100% 0%,   /* top right */
+      100% 90%,  /* bottom right */
+      90% 100%,  /* bottom right */
+      0% 100%,   /* bottom left */
+      0% 100%      /* bottom left */
+    );
+  }
+  button span {
+    --clip: inset(0 100% 0 0);
+    -webkit-clip-path: var(--clip);
+    background: red;
+    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+    bottom: calc(var(--borderWidth) * -1px);
+    clip-path: var(--clip);
+    color: var(--bg, #fafafa);
+    left: calc(var(--borderWidth) * -1px);
+    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+    position: absolute;
+    right: calc(var(--borderWidth) * -1px);
+    top: calc(var(--borderWidth) * -1px);
+    transition: -webkit-clip-path 0.25s ease;
+    transition: clip-path 0.25s ease;
+    transition: clip-path 0.25s ease, -webkit-clip-path 0.25s ease;
+  }
+  button:hover span {
+      background-color: blue;
+    --clip: inset(0 0 0 0);
+  }
+  button:hover {
+
+    box-shadow: calc(var(--boxShadowDepth) / 2 * 1px) calc(var(--boxShadowDepth) / 2 * 1px) 0 #888;
+  }
+  button:active {
+    box-shadow: 0 0 0 #888;
+  }
+ 
