@@ -1,44 +1,79 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
-   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-   <link rel="stylesheet" href="css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registry</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    <div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-      <a href="#home" class="w3-bar-item w3-button"><b>DC & Marvel</b> Super Roster</a>
-      <!-- Float links to the right. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-        <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-        <a href="#about" class="w3-bar-item w3-button">About</a>
-        <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-        {{#if logged_in}}<button class="w3-bar-item w3-button" id="logout">logout</button>{{/if}}
+  <body>
+    <header
+      class="w3-display-container w3-content w3-wide"
+      style="max-width:1500px;"
+      id="home"
+    >
+      <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="#home" class="w3-bar-item w3-button"><b>DC & Marvel</b>
+            Super Roster</a>
+          <!-- Float links to the right. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+            <a href="#about" class="w3-bar-item w3-button">About</a>
+            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+            {{#if logged_in}}<button
+                class="w3-bar-item w3-button"
+                id="logout"
+              >logout</button>{{/if}}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-    {{!-- {{{ body }}} --}}
-    <img class="w3-image" src="/img/p2-BG.jpg" alt="image" width="1500" height="800" >
-    <div class="w3-display-middle w3-margin-top w3-center">
- <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b></b></span> <span class="w3-hide-small w3-text-light-grey">{{{body}}}</span></h1>
-  </header>
-  <div class="w3-content w3-padding" style="max-width:1564px"></div>
-  <main class="container container-fluid mt-5">
-  </main>
-  <footer>
-      
-  </footer>
+      {{!-- {{{ body }}} --}}
+      <img
+        class="w3-image"
+        src="/img/p2-BG.jpg"
+        alt="image"
+        width="1500"
+        height="800"
+      />
+      <div class="w3-display-middle w3-margin-top w3-center">
+        <h1 class="w3-xxlarge w3-text-white"><span
+            class="w3-padding w3-black w3-opacity-min"
+          ><b></b></span>
+          <span class="w3-hide-small w3-text-light-grey">{{{body}}}</span></h1>
+          {{#if logged_in}}<div class="boxBorder3 col-3">
+        <input
+          id="heroSearch"
+          type="text"
+          class="form-control"
+          placeholder="Enter Hero Name"
+          aria-label="Enter Hero Name"
+          aria-describedby="button-addon2"
+        />
+        <button
+          type="button"
+          id="button-addon2"
+        >
+          Search
+        </button>
+      </div>{{/if}}
+      </div>
+    </header>
+    <div class="w3-content w3-padding" style="max-width:1564px"></div>
+    <main class="container container-fluid mt-5">
+    </main>
+    <footer>
 
+    </footer>
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+      <script src="/js/search.js"></script>
+    {{/if}}
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>
 
