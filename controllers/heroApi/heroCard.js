@@ -1,9 +1,9 @@
 const heroSearch = document.getElementById("#heroSearch")
 
 
-function heroSearch(input) {
+// function heroSearch(input) {
     
-}
+// }
 
 const response = await fetch('/api/users', {
     method: 'POST',

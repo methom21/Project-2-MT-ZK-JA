@@ -27,6 +27,11 @@ Hero.init(
       power:{
         type:DataTypes.INTEGER,
         },
+    sideline:{
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
