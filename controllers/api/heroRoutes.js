@@ -7,17 +7,12 @@ const { response } = require('express');
 router.get(`/:hero`,withAuth, async (req,res)=>{
     const heroName = req.params.hero;
     const heroData = await axios.get(`https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${heroName}`);
-    let number = await function(){
-        console.log("test: ",results)
-        
-    }
-    res.json(heroData.data.results[number])
-    console.log(heroData.data.results[0].name);
+    res.json(heroData.data.results)
     
-})
+ 
 
 
-
+});
 
 
 // actual route /api/heros/
