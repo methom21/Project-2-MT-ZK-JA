@@ -5,11 +5,13 @@ searchButton.addEventListener("click", function () {
   //user input
   let SearchInput = document.getElementById("heroSearch").value;
   getHero(SearchInput);
+  
 });
 
 const getHero = async (heroName) => {
   let response = await fetch(`/api/heros/${heroName}`);
   response = await response.json();
+console.log(response);
 
   while (response.name == null) {
     response = alert("Unable To Gather Hero Info");
@@ -65,21 +67,15 @@ const getHero = async (heroName) => {
   await heroJar.append(heroCard);
 
   saveButton.addEventListener("click", function () {
-     name = response.name;
-     description = response.description;
-     power = response.power;
-     combat = response.combat;
-     durability = response.durability;
-     strength = response.strength;
-     speed = response.speed;
-     intelligence = document.querySelector('#intelligence').value;
-    
+     
     fetch("/api/heros/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: name,
-        description: description,
+        name: `Name: ${response.name}`,
+        description: `Also Known As: ${response.biography.aliases.map(
+          (alias) => alias
+        )}. Alter Ego: ${response.biography.full - name} `,
         power: power,
         combat: combat,
         durability: durability,
@@ -88,5 +84,6 @@ const getHero = async (heroName) => {
         intelligence: intelligence,
       }),
     });
+    // document.location.reload()
   });
 };
