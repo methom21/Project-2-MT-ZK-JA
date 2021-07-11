@@ -5,14 +5,11 @@ searchButton.addEventListener("click", function () {
   //user input
   let SearchInput = document.getElementById("heroSearch").value;
   getHero(SearchInput);
-  let childNode = parentNode.removeChild(childNode);
-  
 });
 
 const getHero = async (heroName) => {
   let response = await fetch(`/api/heros/${heroName}`);
   response = await response.json();
-console.log(response);
 
   while (response.name == null) {
     response = alert("Unable To Gather Hero Info");
@@ -49,9 +46,7 @@ console.log(response);
   strength.textContent = `Strength: ${response.powerstats.strength}`;
   speed.textContent = `Speed: ${response.powerstats.speed}`;
   intelligence.textContent = `Intelligence: ${response.powerstats.intelligence}`;
-  description.textContent = `Also Known As: ${response.biography.aliases.map(
-    (alias) => alias
-  )}. Alter Ego: ${response.biography.full - name} `;
+  description.textContent = `Also Known As: ${response.biography.full-name}\nSimilar Characters: ${response.biography.aliases.map((alias) => alias)}.`;
   heroCard.append(
     name,
     heroImg,
@@ -68,23 +63,20 @@ console.log(response);
   await heroJar.append(heroCard);
 
   saveButton.addEventListener("click", function () {
-     
-    fetch("/api/heros/", {
+      fetch("/api/heros/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: `Name: ${response.name}`,
-        description: `Also Known As: ${response.biography.aliases.map(
-          (alias) => alias
-        )}. Alter Ego: ${response.biography.full - name} `,
-        power: power,
-        combat: combat,
-        durability: durability,
-        strength: strength,
-        speed: speed,
-        intelligence: intelligence,
+        name: `${response.name}`,
+        description: `Also Known As: ${response.biography.full-name}\nSimilar Characters: ${response.biography.aliases.map((alias) => alias)}.`,
+        power: response.powerstats.power,
+        combat: response.powerstats.combat,
+        durability: response.powerstats.durability,
+        strength: response.powerstats.strength,
+        speed: response.powerstats.speed,
+        intelligence: response.powerstats.intelligence,
       }),
     });
-    // document.location.reload()
+    document.location.reload()
   });
 };
