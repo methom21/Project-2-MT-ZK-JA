@@ -1,10 +1,16 @@
 const inputSearch = document.getElementById("heroSearch");
 const searchButton = document.getElementById("button-addon2");
+const removeHero = document.getElementById("heroJar");
 
 searchButton.addEventListener("click", function () {
   //user input
   let SearchInput = document.getElementById("heroSearch").value;
   getHero(SearchInput);
+  // removes the children of heroJar to insert new hero search
+  while (removeHero.firstChild) {
+    removeHero.removeChild(removeHero.lastChild);
+  };
+
 });
 
 const getHero = async (heroName) => {
@@ -77,6 +83,9 @@ const getHero = async (heroName) => {
         intelligence: response.powerstats.intelligence,
       }),
     });
-    document.location.reload()
+    // removes the saved hero.
+    while (removeHero.firstChild) {
+      removeHero.removeChild(removeHero.lastChild);
+    };
   });
 };
