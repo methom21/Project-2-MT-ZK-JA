@@ -11,7 +11,6 @@ const getHero = async (heroName) => {
   let response = await fetch(`/api/heros/${heroName}`);
   response = await response.json();
 
-  console.log(response);
   while (response.name == null) {
     response = alert("Unable To Gather Hero Info");
   }
@@ -65,40 +64,29 @@ const getHero = async (heroName) => {
 
   await heroJar.append(heroCard);
 
-  
-  
-
   saveButton.addEventListener("click", function () {
+     name = response.name;
+     description = response.description;
+     power = response.power;
+     combat = response.combat;
+     durability = response.durability;
+     strength = response.strength;
+     speed = response.speed;
+     intelligence = document.querySelector('#intelligence').value;
+    
     fetch("/api/heros/", {
       method: "POST",
-      body: JASON.stringify({
-        name: name.textContent,
-        description: description.textContent,
-        power: power.textContent,
-        combat: combat.textContent,
-        durability: durability.textContent,
-        strength: strength.textContent,
-        speed: speed.textContent,
-        intelligence: intelligence.textContent,
-      }).then((res) => console.log(res)),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        description: description,
+        power: power,
+        combat: combat,
+        durability: durability,
+        strength: strength,
+        speed: speed,
+        intelligence: intelligence,
+      }),
     });
   });
 };
-
-//   const getHeroApi = function (hero) {
-//     const apiUrl = `https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${hero}`;
-//     return fetch(apiUrl)
-//       .then(function (response) {
-//         if (response.ok) {
-//           response.json().then(function (data) {
-
-//             return displayHero(data);
-//           });
-//         } else {
-//           alert("Error: " + response.statusText);
-//         }
-//       })
-//       .catch(function (error) {
-//         alert("Unable to gather Hero data!");
-//       });
-//   };
