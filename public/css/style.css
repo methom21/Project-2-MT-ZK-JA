@@ -95,4 +95,49 @@ button {
   button:active {
     box-shadow: 0 0 0 #888;
   }
- 
+ #heroImg {
+   height: 170px;
+   width: 120px;
+ }
+ #name{
+color: #fff;
+ }
+ #description{
+  color: #fff;
+ }
+ #power{
+  color: #fff;
+ }
+ #combat{
+  color: #fff;
+ }
+ #durability{
+  color: #fff;
+ }
+ #strength{
+  color: #fff;
+ }
+ #intelligence{
+  color: #fff;
+ }
+ #speed{
+  color: #fff;
+ }
+ #heroCard {
+   background-color: rgba(0, 0, 0, 0.5);
+   clip-path: 
+    polygon(
+      0% 10%,     /* top left */
+      10% 0%,     /* top left */
+      100% 0%,    /* top right */
+      100% 0%,   /* top right */
+      100% 90%,  /* bottom right */
+      90% 100%,  /* bottom right */
+      0% 100%,   /* bottom left */
+      0% 100%      /* bottom left */
+    );
+    border: 3px solid #fff;
+ }
+ #heroCard :hover {
+   
+ }
