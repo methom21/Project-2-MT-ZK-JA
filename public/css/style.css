@@ -137,7 +137,8 @@ color: #fff;
       0% 100%      /* bottom left */
     );
     border: 3px solid #fff;
+    margin-top: 150px;
  }
- #heroCard :hover {
-   
+ #backgroundImg {
+   padding-top: 100px;
  }
