@@ -9,14 +9,19 @@ searchButton.addEventListener("click", function () {
   // removes the children of heroJar to insert new hero search
   while (removeHero.firstChild) {
     removeHero.removeChild(removeHero.lastChild);
-  };
 
+    clear();
+  }
 });
+// clears searched input
+let clear = () => {
+  return (document.getElementById("heroSearch").value = "");
+};
+
 
 const getHero = async (heroName) => {
   let response = await fetch(`/api/heros/${heroName}`);
   response = await response.json();
-
   while (response.name == null) {
     response = alert("Unable To Gather Hero Info");
   }
@@ -52,7 +57,9 @@ const getHero = async (heroName) => {
   strength.textContent = `Strength: ${response.powerstats.strength}`;
   speed.textContent = `Speed: ${response.powerstats.speed}`;
   intelligence.textContent = `Intelligence: ${response.powerstats.intelligence}`;
-  description.textContent = `Also Known As: ${response.biography.full-name}\nSimilar Characters: ${response.biography.aliases.map((alias) => alias)}.`;
+  description.textContent = `Also Known As: ${
+    response.biography.full - name
+  }\nSimilar Characters: ${response.biography.aliases.map((alias) => alias)}.`;
   heroCard.append(
     name,
     heroImg,
@@ -69,12 +76,16 @@ const getHero = async (heroName) => {
   await heroJar.append(heroCard);
 
   saveButton.addEventListener("click", function () {
-      fetch("/api/heros/", {
+    fetch("/api/heros/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: `${response.name}`,
-        description: `Also Known As: ${response.biography.full-name}\nSimilar Characters: ${response.biography.aliases.map((alias) => alias)}.`,
+        description: `Also Known As: ${
+          response.biography.full - name
+        }\nSimilar Characters: ${response.biography.aliases.map(
+          (alias) => alias
+        )}.`,
         power: response.powerstats.power,
         combat: response.powerstats.combat,
         durability: response.powerstats.durability,
@@ -86,6 +97,7 @@ const getHero = async (heroName) => {
     // removes the saved hero.
     while (removeHero.firstChild) {
       removeHero.removeChild(removeHero.lastChild);
-    };
+     
+    }
   });
 };
