@@ -5,12 +5,17 @@ const axios = require('axios');
 const { response } = require('express');
 
 router.get(`/:hero`,withAuth, async (req,res)=>{
-    const heroName = req.params.hero;
-    const heroData = await axios.get(`https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${heroName}`);
-    res.json(heroData.data.results)
-    
- 
-
+    try {
+        
+        const heroName = req.params.hero;
+        const heroData = await axios.get(`https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${heroName}`);
+        res.json(heroData.data.results[0]);
+        
+        
+    } catch (err) {
+        res.status(404).json(err);
+        
+    }
 
 });
 
