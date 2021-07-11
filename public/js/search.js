@@ -5,6 +5,7 @@ searchButton.addEventListener("click", function () {
   //user input
   let SearchInput = document.getElementById("heroSearch").value;
   getHero(SearchInput);
+  let childNode = parentNode.removeChild(childNode);
   
 });
 
