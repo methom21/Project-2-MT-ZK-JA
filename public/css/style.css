@@ -24,15 +24,18 @@ color: red;
 }
 
 #logout{color: red;}
-
+.hide-border{
+  border: none;
+}
 .form-container {
-    border: 3px solid #eee;
+    /* border: 3px solid #eee; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 40px;
+    /* margin-left: 25%;
+    margin-right: 25%; */
     margin-top: 100px;
     margin-bottom: auto;
     position: relative;
@@ -201,5 +204,12 @@ color: #fff;
  #backgroundImg {
    position: absolute;
    
+ }
+ #search-form {
+   
+   position: relative;
+   margin-top: 200px;
+   margin-left: 45%;
+  
  }
  
