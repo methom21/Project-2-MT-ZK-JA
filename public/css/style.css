@@ -1,7 +1,7 @@
 html{
   --borderWidth: 5;
   --boxShadowDepth: 8;
-  --buttonColor: rgb(255, 0, 0);
+  --buttonColor: rgb(0, 0, 0);
   --fontSize: 3;
   --horizontalPadding: 16;
   --verticalPadding: 8;
@@ -62,7 +62,7 @@ form input {
 button {
     margin-bottom: 10px;
     background: transparent;
-    border: 3px solid rgb(255, 0, 0);
+    border:none;
    
     color: var(--buttonColor);
     cursor: pointer;
@@ -74,12 +74,12 @@ button {
     transition: box-shadow 0.15s ease;
     clip-path: 
     polygon(
-      0% 10%,     /* top left */
-      10% 0%,     /* top left */
+      0% 25%,     /* top left */
+      25% 0%,     /* top left */
       100% 0%,    /* top right */
       100% 0%,   /* top right */
-      100% 90%,  /* bottom right */
-      90% 100%,  /* bottom right */
+      100% 75%,  /* bottom right */
+      75% 100%,  /* bottom right */
       0% 100%,   /* bottom left */
       0% 100%      /* bottom left */
     );

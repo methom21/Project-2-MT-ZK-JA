@@ -19,14 +19,21 @@
   </div>
 
 
-  <script id="cardTemplate" type="text/x-handlebars-template">
-    {{#each response}}
-      <div>
-      <h2>{{name}}</h2>
-
+  {{#each response}}
+  <div id = "roster-container">
+          <h2 class = "roster-name">{{name}}</h2>
+          <img src="{{image.url}}" alt="" class="roster-hero-img">
+          <h3 class="roster-description">Description | Height:{{appearance.height}} Weight:{{appearance.weight}}</h3>
+          <h3 class="roster-power">Power: {{powerstats.power}}</h3>
+          <h3 class="roster-combat">Combat: {{powerstats.combat}}</h3>
+          <h3 class="roster-durability">Durability: {{powerstats.durability}}</h3>
+          <h3 class="roster-strength">Strength: {{strength}}</h3>
+          <h3 class="roster-speed">Speed: {{powerstats.speed}}</h3>
+          <h3 class="roster-intelligence">intelligence: {{powerstats.intelligence}}</h3>
+          <button onclick="saveButtonRun()">Recruit</button>
+          
       </div>
-    {{/each}}
-  </script>
+  {{/each}}
 </div>
 
 
