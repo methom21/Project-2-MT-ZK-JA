@@ -11,20 +11,19 @@ router.get('/user-roster', withAuth, async (req, res) => {
     {
     // {include: [{model:User},{model:Hero,through:Roster}]},
     // fillCards(heroData)
-    const postData = await Hero.destroy({
+    const postData = await Hero.findAll({
     where: 
     {
-    id: req.params.id,
     user_id: req.session.user_id,
     },
     });
-    if (!heroData) 
+    if (!postData) 
     {
     res.status(404).json
     ({ message: 'Im afraid I cant let you do that, the ID is incorrect.'});
     return;
     }
-    res.status(200).json(heroData);
+    res.status(200).json(postData);
     } 
     catch
     (err) {res.status(500).json(err)}
