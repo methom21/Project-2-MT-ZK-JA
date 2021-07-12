@@ -22,6 +22,9 @@ Hero.init(
     type: DataTypes.STRING,
     allowNull: false,
     },
+    image: {
+    type: DataTypes.STRING,
+    },
     description: {
     type: DataTypes.STRING,
     },

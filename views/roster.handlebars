@@ -1,5 +1,5 @@
-<div><h2>ROSTER TEST</h2></div>
 
+<<<<<<< HEAD
   <script type="text/x-handlebars-template"></script>
   </script>
     {{#each users as |hero| }}
@@ -16,5 +16,29 @@
 {{/each}}
 
  
+=======
+
+
+
+
+
+  {{#each rosterData}}
+  {{!-- <h2>{{name}}</h2> --}}
+  <div id = "roster-container">
+          <h2 id = "roster-name">{{name}}</h2>
+          <img src="{{i}}" alt="" id="roster-hero-img">
+          {{!-- <h3 id="roster-description">{{description}}</h3> --}}
+          <h3 id="roster-power">Power: {{power}}</h3>
+          <h3 id="roster-combat">Combat: {{combat}}</h3>
+          <h3 id="roster-durability">Durability: {{durability}}</h3>
+          <h3 id="roster-strength">Strength: {{strength}}</h3>
+          <h3 id="roster-speed">Speed: {{speed}}</h3>
+          <h3 id="roster-intelligence">intelligence: {{intelligence}}</h3>
+      </div>
+  {{/each}}
+  {{!-- <script type="text/x-handlebars-template">
+  </script>
+  <script></script> --}}
+>>>>>>> b5251010fa745309287664fbd10aabe9ab55f26e
    
       
