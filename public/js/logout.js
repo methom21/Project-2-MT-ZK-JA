@@ -1,7 +1,3 @@
-
-// const inputSearch = document.getElementById('heroSearch')
-// const searchButton = document.getElementById("button-addon2");
-
 const logout = async () => {
   const response = await fetch("/api/users/logout", {
     method: "POST",

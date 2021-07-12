@@ -9,7 +9,7 @@ router.get(`/:hero`,withAuth, async (req,res)=>{
         
         const heroName = req.params.hero;
         const heroData = await axios.get(`https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${heroName}`);
-        res.json(heroData.data.results[0]);
+        res.json(heroData.data.results);
         
         
     } catch (err) {

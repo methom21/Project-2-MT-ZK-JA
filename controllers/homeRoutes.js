@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
-
+//HOMEPAGE
 router.get('/', withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -12,7 +12,7 @@ router.get('/', withAuth, async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render('homepage', {
+    res.render('home', {
       users,
       logged_in: req.session.logged_in,
     });
@@ -21,6 +21,8 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+
+//LOGIN
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -56,5 +58,35 @@ router.get('/signup', (req, res) => {
 
   res.render('signup');
 });
+
+
+//SEARCH
+router.get('/search', withAuth, async (req, res) => {
+  const userData = await User.findAll({
+    attributes: { exclude: ['password'] },
+    order: [['name', 'ASC']],
+  });
+
+  const users = userData.map((project) => project.get({ plain: true }));
+
+  if(req.session.logged_in)
+  {res.render('search',
+  {users,logged_in: req.session.logged_in,}
+  );return}
+
+});
+
+
+
+//USER-ROSTER
+
+
+
+
+
+
+
+
+
 
 module.exports = router;

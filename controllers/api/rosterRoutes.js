@@ -1,9 +1,8 @@
 //  /roster/
 
 const router = require('express').Router();
-const { User, Hero, Roster } = require('../../models');
+const { Hero } = require('../../models');
 const withAuth = require('../../utils/auth');
-const axios = require('axios');
 
 //gets all card assigned to user_id
 router.get('/user-roster', withAuth, async (req, res) => {
