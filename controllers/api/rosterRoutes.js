@@ -1,22 +1,27 @@
+//  /roster/
+
 const router = require('express').Router();
 const { User, Hero, Roster } = require('../../models');
 const withAuth = require('../../utils/auth');
 const axios = require('axios');
 
 //gets all card assigned to user_id
-router.get('/:id', async (req, res) => {
+router.get('/user-roster', withAuth, async (req, res) => {
     try
     {
-    const heroData = await Hero
-    .findByPk(req.params.id, 
+    // {include: [{model:User},{model:Hero,through:Roster}]},
+    // fillCards(heroData)
+    const postData = await Hero.destroy({
+    where: 
     {
-    include: [{model:Hero,through:Roster,}]
+    id: req.params.id,
+    user_id: req.session.user_id,
     },
-    fillCards(heroData)
-    );
+    });
     if (!heroData) 
     {
-    res.status(404).json({ message: 'Im afraid I cant let you do that, the ID is incorrect.'});
+    res.status(404).json
+    ({ message: 'Im afraid I cant let you do that, the ID is incorrect.'});
     return;
     }
     res.status(200).json(heroData);
