@@ -11,11 +11,17 @@ Hero.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
     name: {
     type: DataTypes.STRING,
     allowNull: false,
     },
-    
     description: {
     type: DataTypes.STRING,
     },
@@ -37,17 +43,55 @@ Hero.init(
     intelligence:{
     type:DataTypes.INTEGER,
     },
+    // trait1unlock:{
+    //   type: DataTypes.BOOLEAN,
+    //   defaultValue: null
+    // },
+    // trait1Buff:{
+    //   type: DataTypes.BOOLEAN,
+    //   defaultValue: null
+    // },
+    // trait3:{
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'buffs',
+    //     key: 'id',
+    //   },
+    // },
+    // trait2unlock:{
+    //   type: DataTypes.BOOLEAN,
+    //   defaultValue: null
+    // },
+    // trait2Buff:{
+    //   type: DataTypes.BOOLEAN,
+    //   defaultValue: null
+    // },
+    // trait2:{
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'buffs',
+    //     key: 'id',
+    //   },
+    // },
+    // trait3unlock:{
+    //   type: DataTypes.BOOLEAN,
+    //   defaultValue: null
+    // },
+    // trait3Buff:{
+    //   type: DataTypes.BOOLEAN,
+    //   defaultValue: null
+    // },
+    // trait3:{
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'buffs',
+    //     key: 'id',
+    //   },
+    // },
     sideline:{
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
     },
   },
   {
