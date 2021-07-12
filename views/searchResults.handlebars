@@ -1,0 +1,35 @@
+ <div><h2>RESULTS TEST</h2></div> 
+  
+  <div class="w3-card-4">
+    
+    <script type="text/x-handlebars-template">
+    <div class="w3-container w3-center" id="heroJar">
+      {{#each response}}
+      <div>
+      <h2>{{name}}</h2>
+      <h2>POWER: {{powerstats.power}}</h2>
+      <button>TEST</button>  
+      {{/each}}
+
+    </div>
+    
+    </script>
+    
+  </div>
+
+
+  <div class="boxBorder3 col-3">
+    <input
+      id="heroSearch"
+      type="text"
+      class="form-control"
+      placeholder="Enter Hero Name"
+      aria-label="Enter Hero Name"
+      aria-describedby="button-addon2"
+    />
+    <button type="button" id="searchButton"  href="/searchResults">
+      Search
+    </button>
+  </div>
+
+  <script src="/js/search.js"></script>

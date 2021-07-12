@@ -76,10 +76,38 @@ router.get('/search', withAuth, async (req, res) => {
 
 });
 
+//SHOW SEARCH RESULTS
+router.get('/search', withAuth, async (req, res) => {
+  const userData = await User.findAll({
+    attributes: { exclude: ['password'] },
+    order: [['name', 'ASC']],
+  });
+
+  const users = userData.map((project) => project.get({ plain: true }));
+
+  if(req.session.logged_in)
+  {res.render('searchResults',
+  {users,logged_in: req.session.logged_in,}
+  );return}
+
+});
 
 
 //USER-ROSTER
+router.get('/roster', withAuth, async (req, res) => {
+  const userData = await User.findAll({
+    attributes: { exclude: ['password'] },
+    order: [['name', 'ASC']],
+  });
 
+  const users = userData.map((project) => project.get({ plain: true }));
+
+  if(req.session.logged_in)
+  {res.render('roster',
+  {users,logged_in: req.session.logged_in,}
+  );return}
+
+});
 
 
 

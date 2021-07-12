@@ -1,10 +1,29 @@
-/* #hidelogin .hidden {
+html{
+  --borderWidth: 5;
+  --boxShadowDepth: 8;
+  --buttonColor: rgb(255, 0, 0);
+  --fontSize: 3;
+  --horizontalPadding: 16;
+  --verticalPadding: 8;
+  --clip: inset(0 100% 0 0);
 
-} */
+  font-family: Verdana,sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+
+}
+
 .hide {
     display: none,
 }
 
+div h2 {
+font-size: large;
+font-weight: bolder;
+color: red;
+}
+
+#logout{color: red;}
 
 .form-container {
     border: 3px solid #eee;
@@ -38,21 +57,15 @@ form input {
 }
 button {
     margin-bottom: 10px;
-    --borderWidth: 5;
-    --boxShadowDepth: 8;
-    --buttonColor: #fff;
-    --fontSize: 3;
-    --horizontalPadding: 16;
-    --verticalPadding: 8;
     background: transparent;
-    border: 3px solid #eee;
+    border: 3px solid rgb(255, 0, 0);
    
     color: var(--buttonColor);
     cursor: pointer;
-    font-size: calc(var(--fontSize) * 1rem);
+    /* font-size: calc(var(--fontSize) * 1rem); */
     font-weight: bold;
     outline: transparent;
-    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+    /* padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px); */
     position: relative;
     transition: box-shadow 0.15s ease;
     clip-path: 
@@ -67,8 +80,31 @@ button {
       0% 100%      /* bottom left */
     );
   }
+
+  #logo{
+    margin-bottom: 10px;
+    /* border: 3px solid #000; */
+    color: black;
+    transition: box-shadow 0.15s ease;
+    clip-path: 
+    polygon(
+      0% 10%,     /* top left */
+      10% 0%,     /* top left */
+      100% 0%,    /* top right */
+      100% 0%,   /* top right */
+      100% 90%,  /* bottom right */
+      90% 100%,  /* bottom right */
+      0% 100%,   /* bottom left */
+      0% 100%      /* bottom left */
+    );
+  }
+  #logo:hover{
+    background-color: blue;
+  }
+
+
   button span {
-    --clip: inset(0 100% 0 0);
+
     -webkit-clip-path: var(--clip);
     background: red;
     border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
@@ -76,7 +112,7 @@ button {
     clip-path: var(--clip);
     color: var(--bg, #fafafa);
     left: calc(var(--borderWidth) * -1px);
-    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+    /* padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px); */
     position: absolute;
     right: calc(var(--borderWidth) * -1px);
     top: calc(var(--borderWidth) * -1px);
@@ -91,10 +127,32 @@ button {
   button:hover {
 
     box-shadow: calc(var(--boxShadowDepth) / 2 * 1px) calc(var(--boxShadowDepth) / 2 * 1px) 0 #888;
+    
   }
   button:active {
-    box-shadow: 0 0 0 #888;
+    box-shadow: 0 0 0 #000;
   }
+
+a:hover {
+  background-color: black;
+  color: red;
+  border: red solid 3px;
+  clip-path: 
+  polygon(
+    0% 10%,     /* top left */
+    10% 0%,     /* top left */
+    100% 0%,    /* top right */
+    100% 0%,   /* top right */
+    100% 90%,  /* bottom right */
+    90% 100%,  /* bottom right */
+    0% 100%,   /* bottom left */
+    0% 100%      /* bottom left */
+  );
+}
+
+
+
+
  #heroImg {
    height: 170px;
    width: 120px;

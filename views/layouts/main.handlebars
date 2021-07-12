@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Super Roster</title>
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    <link rel="stylesheet" href="css/style.css">
-
+</head>
 
 <body>
     <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-      <h1><a {{#if logged_in}}href="/home"{{/if}} class="w3-bar-item w3-button"> Super <b>Roster</b></a></h1>
+      <h1><a {{#if logged_in}}href="/"{{/if}} class="w3-bar-item w3-button" id="logo"> Super <b>Roster</b></a></h1>
 
       <!-- Float links to the right. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
+      <nav class="w3-right">
         {{#if logged_in}}<a href="/search" class="w3-bar-item w3-button">Search</a>{{/if}}
-        {{#if logged_in}}<a href="#" id="rosterButton" class="w3-bar-item w3-button">Roster</a>{{/if}}
+        {{#if logged_in}}<a href="/roster" id="rosterButton" class="w3-bar-item w3-button">Roster</a>{{/if}}
         <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-        {{#if logged_in}}<button class="w3-bar-item w3-button" id="logout">logout</button>{{/if}}
+        {{#if logged_in}}<a class="w3-bar-item w3-button" id="logout">Logout</a>{{/if}}
         {{#if logged_in}}<a href="/home"></a>{{/if}}
-      </div>
+      </nav>
      
     </div>
   </div>
   <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    <img id = "backgroundImg" class="w3-image" src="/img/p2-BG.jpg" alt="image" width="1500" height="1000" >
-    <div class="w3-display-middle w3-margin-top w3-center">
+    <img id = "backgroundImg"  src="/img/p2-BG.jpg" alt="image" width="1500" height="1000" >
   </header>
  
- <span class="">{{{body}}}</span>
+ <body>{{{body}}}</body>
  
   <div class="w3-content w3-padding" style="max-width:1564px"></div>
-  <main class="container container-fluid mt-5">
-  </main>
-  <footer>
-      
-  </footer>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
-
   {{/if}}
 </body>
 
