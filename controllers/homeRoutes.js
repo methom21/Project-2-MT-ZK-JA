@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Hero } = require('../models');
 const withAuth = require('../utils/auth');
 
 //HOMEPAGE
@@ -95,16 +95,18 @@ router.get('/search', withAuth, async (req, res) => {
 
 //USER-ROSTER
 router.get('/roster', withAuth, async (req, res) => {
-  const userData = await User.findAll({
-    attributes: { exclude: ['password'] },
-    order: [['name', 'ASC']],
-  });
+  const userData = await Hero.findAll({
+    where: 
+    {
+    user_id: req.session.user_id,
+    },
+    });
 
-  const users = userData.map((project) => project.get({ plain: true }));
-
+  const rosterData = userData.map((project) => project.get({ plain: true }));
+console.log(rosterData)
   if(req.session.logged_in)
   {res.render('roster',
-  {users,logged_in: req.session.logged_in,}
+  {rosterData,logged_in: req.session.logged_in,}
   );return}
 
 });
