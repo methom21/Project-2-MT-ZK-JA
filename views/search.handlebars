@@ -11,26 +11,23 @@
     />
     </form>
     <button class="btn btn-primary search-button" type="button" id="searchButton" >Search<span>Search</span></button>
+  </div>
 
-
-      {{#if response.length}}
-    <div>
-    <h3>TEST</h3>
-
-    {{#each response as |character|}}
-    <div>
-      <div><h2>{{character.name}}</h2></div>
+  <div>
+    <div id="searchResults">
     </div>
+  </div>
+
+
+  <script id="cardTemplate" type="text/x-handlebars-template">
+    {{#each response}}
+      <div>
+      <h2>{{name}}</h2>
+
+      </div>
     {{/each}}
-  </div>
-  {{/if}}
-
-
-  </div>
-  <script>
-
-
   </script>
+</div>
 
 
   <script src="/js/search.js"></script>
