@@ -1,18 +1,19 @@
-const router = require('express').Router();
-const { User, Hero } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const axios = require("axios");
+const { User, Hero } = require("../models");
+const withAuth = require("../utils/auth");
 
 //HOMEPAGE
-router.get('/', withAuth, async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['name', 'ASC']],
+      attributes: { exclude: ["password"] },
+      order: [["name", "ASC"]],
     });
 
     const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render('home', {
+    res.render("home", {
       users,
       logged_in: req.session.logged_in,
     });
@@ -21,102 +22,81 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-
 //LOGIN
-router.get('/profile', withAuth, async (req, res) => {
+router.get("/profile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ["password"] },
       include: [{ model: Post }],
     });
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render("profile", {
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect("/profile");
     return;
   }
 
-  res.render('login');
+  res.render("login");
 });
 
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect("/profile");
     return;
   }
 
-  res.render('signup');
+  res.render("signup");
 });
-
 
 //SEARCH
-router.get('/search', withAuth, async (req, res) => {
-  const userData = await User.findAll({
-    attributes: { exclude: ['password'] },
-    order: [['name', 'ASC']],
-  });
+router.get("/search/:hero?", withAuth, async (req, res) => {
+  if (!req.session.logged_in) return res.redirect("/");
+  try {
+    const heroName = req.params.hero;
+    let heros = null;
+    if (heroName) {
+      const { data } = await axios.get(
+        `https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${heroName}`
+      );
+      heros = data.results;
+    }
 
-  const users = userData.map((project) => project.get({ plain: true }));
-
-  if(req.session.logged_in)
-  {res.render('search',
-  {users,logged_in: req.session.logged_in,}
-  );return}
-
+    res.render("search", {
+      logged_in: req.session.logged_in,
+      heros,
+    });
+    // res.render("", {});
+  } catch (err) {
+    console.log(err);
+    res.status(404).json(err);
+  }
 });
-
-//SHOW SEARCH RESULTS
-router.get('/search', withAuth, async (req, res) => {
-  const userData = await User.findAll({
-    attributes: { exclude: ['password'] },
-    order: [['name', 'ASC']],
-  });
-
-  const users = userData.map((project) => project.get({ plain: true }));
-
-  if(req.session.logged_in)
-  {res.render('searchResults',
-  {users,logged_in: req.session.logged_in,}
-  );return}
-
-});
-
 
 //USER-ROSTER
-router.get('/roster', withAuth, async (req, res) => {
+router.get("/roster", withAuth, async (req, res) => {
   const userData = await Hero.findAll({
-    where: 
-    {
-    user_id: req.session.user_id,
+    where: {
+      user_id: req.session.user_id,
     },
-    });
+  });
 
   const rosterData = userData.map((project) => project.get({ plain: true }));
-console.log(rosterData)
-  if(req.session.logged_in)
-  {res.render('roster',
-  {rosterData,logged_in: req.session.logged_in,}
-  );return}
-
+  console.log(rosterData);
+  if (req.session.logged_in) {
+    res.render("roster", { rosterData, logged_in: req.session.logged_in });
+    return;
+  }
 });
-
-
-
-
-
-
-
-
 
 module.exports = router;
