@@ -1,11 +1,5 @@
-
-const saveHero = document.querySelector(".saveBtn");
 let searchInput = document.querySelector("#searchInput");
-
-
-
-
-
+const searchButton = document.getElementById("searchButton");
 
 searchButton.addEventListener("click", function () {
   if (searchInput.value == "") {
@@ -15,19 +9,13 @@ searchButton.addEventListener("click", function () {
   }
 });
 
-function run(heroId){
-  console.log(heroId)
- 
-  if (heroId.value == "") {
-    console.log("I cant let you do that Dave");
-  } else {
-    fetch(`/api/heros/${heroId}`,  {"method": "GET"})
-    // window.location.replace(`/search/${heroId.value}`);
-  }
+function run(heroId) {
+  console.log(heroId);
+
+  return window.location.replace(`/search/${heroId}`);
+  console.log(heroId);
+  console.log(heroId);
 }
-
-  
-
 
 //  await function saveButtonRun() {
 //     fetch("/api/home/", {
@@ -48,8 +36,3 @@ function run(heroId){
 //       }),
 //     });
 //   };
-
-
-
-
-
