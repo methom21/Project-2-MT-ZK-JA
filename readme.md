@@ -3,7 +3,7 @@
  ## Table of Contents.
  * [Overview](#overview)
  * [Design](#overview)
- * [Criteria](#given-criteria)
+ * [Criteria](#criteria)
  * [Questions](#have-questions)
  * [Links](#links)
 ---
