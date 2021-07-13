@@ -103,6 +103,8 @@ router.get("/roster", withAuth, async (req, res) => {
   }
 });
 
+
+//GET BY ID
 router.get("/search/:id?", withAuth, async (req, res) => {
   if (!req.session.logged_in) return res.redirect("/");
   try {
@@ -116,13 +118,13 @@ router.get("/search/:id?", withAuth, async (req, res) => {
       );
       console.log(data);
       herosId = data;
-      console.log(`hello world`);
-      console.log(herosId);
-      console.log(`hello world`);
+      console.log(`--------------------------------------------------------------hello world`);
+      console.log("HERO ID: ",herosId);
+      console.log(`--------------------------------------------------------------hello world`);
       
     }
       
-    res.render("search", {
+    res.render("search-confirm", {
       logged_in: req.session.logged_in,
       herosId,
     });

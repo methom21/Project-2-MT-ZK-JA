@@ -15,6 +15,9 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
+      console.log("LINE17")
+      sessionStorage.setItem("user",response.body.user)
+
       document.location.replace('/');
     } else {
       alert(response.statusText);

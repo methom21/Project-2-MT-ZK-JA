@@ -12,7 +12,10 @@ html{
   line-height: 1.5;
 
 }
-
+.savebtn{
+min-width: 100px;
+min-height: 100px;
+}
 .hide {
     display: none,
 }

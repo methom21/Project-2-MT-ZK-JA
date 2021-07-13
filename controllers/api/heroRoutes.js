@@ -4,12 +4,30 @@ const withAuth = require('../../utils/auth');
 const axios = require('axios');
 const { response } = require('express');
 
+router.get(`/:hero`,withAuth, async (req,res)=>{
+    try {
+        
+        const heroName = req.params.hero;
+        const heroData = await axios.get(`https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${heroName}`);
+        res.json(heroData.data.results[0]);
+        
+        
+    } catch (err) {
+        res.status(404).json(err);
+        
+    }
+
+});
+
+
+
+//get by ID
 // router.get(`/:hero`,withAuth, async (req,res)=>{
 //     try {
         
-//         const heroName = req.params.hero;
-//         const heroData = await axios.get(`https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${heroName}`);
-//         res.json(heroData.data.results);
+//         const heroAPIid = req.params.hero;
+//         const heroId = await axios.get(`https://superheroapi.com/api/${process.env.DB_APIKEY}/${heroAPIid}`);
+//         res.json(heroId.data.results);
         
         
 //     } catch (err) {
@@ -20,19 +38,20 @@ const { response } = require('express');
 // });
 
 
-// // actual route /api/heros/
-// router.post('/', withAuth, async (req, res) => {
-// try 
-// {
-// const newHero = await Hero.create
-// ({...req.body,user_id: req.session.user_id,});
-// res.status(200).json(newHero);
-// } 
-// catch (err) 
-// {
-// res.status(400).json(err);
-// }
-// });
+
+// actual route /api/heros/
+router.post('/', withAuth, async (req, res) => {
+try 
+{
+const newHero = await Hero.create
+({...req.body,user_id: req.session.user_id,});
+res.status(200).json(newHero);
+} 
+catch (err) 
+{
+res.status(400).json(err);
+}
+});
 
 
 
