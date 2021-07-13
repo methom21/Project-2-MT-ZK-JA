@@ -70,13 +70,16 @@ router.get("/search/:hero?", withAuth, async (req, res) => {
         `https://superheroapi.com/api/${process.env.DB_APIKEY}/search/${heroName}`
       );
       heros = data.results;
+      
     }
-
+      
     res.render("search", {
       logged_in: req.session.logged_in,
       heros,
     });
-    // res.render("", {});
+
+
+   
   } catch (err) {
     console.log(err);
     res.status(404).json(err);
@@ -98,5 +101,53 @@ router.get("/roster", withAuth, async (req, res) => {
     return;
   }
 });
+router.get("/search/:id?", withAuth, async (req, res) => {
+  if (!req.session.logged_in) return res.redirect("/");
+  try {
+    const herosId = req.params.id;
+    let heroId = null;
+    if (herosId) {
+      const { data } = await axios.get(
+        `https://superheroapi.com/api/${process.env.DB_APIKEY}/${herosId}`
+      );
+      heroId = data.results;
+       
+      console.log(`hello world`)
+      console.log(data.results,`hello world`)
+      console.log(`hello world`)
+    }
+      
+    res.render("search", {
+      logged_in: req.session.logged_in,
+      heroId,
+    });
+    await function saveButton() {
+      fetch("/api/heros/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: `${response.name}`,
+          description: `Also Known As: ${
+            response.biography.full - name
+          }\nSimilar Characters: ${response.biography.aliases.map(
+            (alias) => alias
+          )}.`,
+          power: response.powerstats.power,
+          combat: response.powerstats.combat,
+          durability: response.powerstats.durability,
+          strength: response.powerstats.strength,
+          speed: response.powerstats.speed,
+          intelligence: response.powerstats.intelligence,
+        }),
+      });
+   
+    
+  }
 
+   
+  } catch (err) {
+    console.log(err);
+    res.status(404).json(err);
+  }
+});
 module.exports = router;
