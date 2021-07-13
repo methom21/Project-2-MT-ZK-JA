@@ -1,35 +1,60 @@
- #                                                                                               HERO-FANTASY
-                                                                                 
-                                                                                 USER STORY
-As a user I want to play a heroes and villains card game application,
-WHEN i first open the application,
-THEN it should prompt me to log in or sign up,
-WHEN i log in if i have one 
-THEN i will see my team roster
-WHEN i sign up
-THEN i will see chrarcters i can add to my team
-WHEN i add a character to my team 
-THEN they are added to my team roster and put in the roster section 
-WHEN im viewing my team roster 
-then i will have two button options to click either manage or delete
-WHEN i click on the manage button 
-THEN i will be able to update my team characters player by player
-WHEN i click on the delete button 
-THEN my team is wiped clean and i will have to build my team from scratch.
+# 20210713 - Super Roster
+
+ ## Table of Contents.
+ * [Overview](#overview)
+ * [Design](#overview)
+ * [Criteria](#given-criteria)
+ * [Questions](#have-questions)
+ * [Links](#links)
+---
 
 
-                                                                                     DESCRIPTION
-We are creating an application that when the user is on the website they will be able to pick a deck of superhereos and villains from the DC and Marvel universes. The user will make an account and it will save their deck and their login info. They will be able to look up superheroes and villains and see a pictue of the character along with statistics. 
+## Overview 
+Super Roster is an app that allows the user to look up statistical information about their favorite characters then save them to their account. 
 
 
+---
+## Design
+Application prompts the user for their login information when first opened.
+When logged in user may search for a hero or view all heros the user has already saved to their roster.
+Users may add any hero they have searched for to their roster.
 
-                                                                                  FUTURE DEVELOPEMENT
-for the future we would like to develope it into a real game where a user would be able to battle other people and their decks. there will be a maximum power number that the user cant pass so the power statistic of their characters will be added up and if it passes the max number you wont be able to use them and will have to pick a character with lower powere to meet the criteria. 
+
+![image](/img/Project-02.png)
 
 
+TASK BREAKDOWN: Front End - Mikey | Back End - Joe and Zach
 
-                                                                                    TASK BREAKDOWN
-  front end- mikey
-  backend- zach and joe                                                                                      
 
-![image](/img/Screenshot(72).png)
+---
+## Criteria
+* Use Node.js and Express.js to create a RESTful API.
+* Use Handlebars.js as the template engine.
+* Use MySQL and the Sequelize ORM for the database.
+* Have both GET and POST routes for retrieving and adding new data.
+* Have a folder structure that meets the MVC paradigm.
+* Include authentication (express-session and cookies).
+* Protect API keys and sensitive information with environment variables.
+* Be deployed using Heroku.
+* Polished UI that is responsive.
+
+---
+## Have Questions
+### You can contact us at:
+
+GITHUB: <https://github.com/ZacharyWK>
+GITHUB: <https://github.com/methom21>
+GITHUB: <https://github.com/kirito714>
+
+## Links
+[REPOSITORY](https://github.com/methom21/Project-2-MT-ZK-JA)
+```
+https://github.com/methom21/Project-2-MT-ZK-JA
+```
+
+[DEPLOYED](https://super-roster.herokuapp.com/)
+```
+https://super-roster.herokuapp.com/
+```
+                                                                                
+
