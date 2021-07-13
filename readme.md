@@ -42,9 +42,9 @@ TASK BREAKDOWN: Front End - Mikey | Back End - Joe and Zach
 ## Have Questions
 ### You can contact us at:
 
-GITHUB: <https://github.com/ZacharyWK>
 GITHUB: <https://github.com/methom21>
 GITHUB: <https://github.com/kirito714>
+GITHUB: <https://github.com/ZacharyWK>
 
 ## Links
 [REPOSITORY](https://github.com/methom21/Project-2-MT-ZK-JA)
