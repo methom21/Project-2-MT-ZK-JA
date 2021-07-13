@@ -14,7 +14,7 @@
 //   const user_id = sessionStorage.getItem()
 
 //   return window.location.replace(`/search/${heroId}`);
- 
+
 // }
 
 const inputSearch = document.getElementById("searchInput");
@@ -37,7 +37,6 @@ let clear = () => {
   return (document.getElementById("searchInput").value = "");
 };
 
-
 const getHero = async (heroName) => {
   let response = await fetch(`/api/heros/${heroName}`);
   response = await response.json();
@@ -46,37 +45,44 @@ const getHero = async (heroName) => {
   }
 
   const heroJar = document.getElementById("heroJar");
-  let heroCard = document.createElement("div");
+  let heroCard = document.createElement("ul");
   heroCard.setAttribute("id", "heroCard");
+  heroCard.setAttribute("class", "w3-rest");
   let name = document.createElement("h2");
   name.setAttribute("id", "name");
-  let description = document.createElement("p");
+  let description = document.createElement('lo');
   description.setAttribute("id", "description");
-  let power = document.createElement("p");
+
+  let power = document.createElement('lo');
   power.setAttribute("id", "power");
-  let combat = document.createElement("p");
+
+  let combat = document.createElement('lo');
   combat.setAttribute("id", "combat");
-  let durability = document.createElement("p");
+  let durability = document.createElement('lo');
   durability.setAttribute("id", "durability");
-  let strength = document.createElement("p");
+  let strength = document.createElement('lo');
   strength.setAttribute("id", "strength");
-  let speed = document.createElement("p");
+  let speed = document.createElement('lo');
   speed.setAttribute("id", "speed");
-  let intelligence = document.createElement("p");
+  let intelligence = document.createElement('lo');
   intelligence.setAttribute("id", "intelligence");
   let saveButton = document.createElement("button");
-  saveButton.setAttribute("class", "saveBtn");
+  saveButton.setAttribute("class", "saveBtn btn btn-primary search-button");
   let heroImg = document.createElement("img");
-  heroImg.setAttribute("id", "heroImg");
+  heroImg.setAttribute("id", "heroImg ");
+  saveButton.textContent = "save";
   name.textContent = `${response.name}`;
   heroImg.setAttribute("src", response.image.url);
-  power.textContent = `Power: ${response.powerstats.power}`;
-  combat.textContent = `Combat: ${response.powerstats.combat}`;
-  durability.textContent = `Durability: ${response.powerstats.durability}`;
-  strength.textContent = `Strength: ${response.powerstats.strength}`;
-  speed.textContent = `Speed: ${response.powerstats.speed}`;
-  intelligence.textContent = `Intelligence: ${response.powerstats.intelligence}`;
-  description.textContent = `Description | Height:${response.appearance.height} | Weight:${response.appearance.weight}`;
+  power.textContent = ` | Power ${response.powerstats.power}`;
+  combat.textContent = `| Combat ${response.powerstats.combat}`;
+  durability.textContent = `| Durability ${response.powerstats.durability}`;
+  strength.textContent = ` | Strength ${response.powerstats.strength}`;
+  speed.textContent = ` | Speed ${response.powerstats.speed}`;
+  intelligence.textContent = ` | Intelligence ${response.powerstats.intelligence}`;
+  description.textContent = ` | Description | Height:${response.appearance.height} | Weight:${response.appearance.weight}`;
+  // description.textContent = `Also Known As: ${
+  //   response.biography.full - name
+  // }\nSimilar Characters: ${response.biography.aliases.map((alias) => alias)}.`;
   heroCard.append(
     name,
     heroImg,
@@ -87,7 +93,7 @@ const getHero = async (heroName) => {
     strength,
     speed,
     intelligence,
-    description,
+    description
   );
 
   await heroJar.append(heroCard);
@@ -99,7 +105,7 @@ const getHero = async (heroName) => {
       body: JSON.stringify({
         name: `${response.name}`,
         image: `${response.image.url}`,
-        description:`Description | Height:${response.appearance.height} | Weight:${response.appearance.weight}`,
+        description: `Description | Height:${response.appearance.height} | Weight:${response.appearance.weight}`,
         power: response.powerstats.power,
         combat: response.powerstats.combat,
         durability: response.powerstats.durability,
@@ -111,7 +117,6 @@ const getHero = async (heroName) => {
     // removes the saved hero.
     while (removeHero.firstChild) {
       removeHero.removeChild(removeHero.lastChild);
-     
     }
   });
 };
