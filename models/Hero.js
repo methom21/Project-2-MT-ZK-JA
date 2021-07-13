@@ -46,9 +46,9 @@ Hero.init(
     intelligence:{
     type:DataTypes.INTEGER,
     },
-    api_id:{
-    type:DataTypes.INTEGER,
-    },
+    // api_id:{
+    // type:DataTypes.INTEGER,
+    // },
     // trait1unlock:{
     //   type: DataTypes.BOOLEAN,
     //   defaultValue: null

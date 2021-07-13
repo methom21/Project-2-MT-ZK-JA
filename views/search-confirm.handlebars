@@ -1,0 +1,61 @@
+{{!-- <div><h2>CONFIRM TEST</h2></div>
+  <div id= 'search-form'>
+    <form class="form-group">
+    <input
+      id="searchInput"
+      type="text"
+      class="form-control"
+      placeholder="Enter Hero Name"
+      aria-label="Enter Hero Name"
+      aria-describedby="button-addon2"
+    />
+    </form>
+    <button class="btn btn-primary search-button" type="button" id="searchButton" >Search<span>Search</span></button>
+  </div>
+
+  <div>
+    <div id="searchResults">
+    </div>
+  </div>
+
+
+  {{#each heroId}}
+  <div id = "confirm-container">
+          <h2 class = "confirm-name">{{name}}</h2>
+          <img src="{{image.url}}" alt="" class="confirm-hero-img">
+          <h3 class="confirm-description">Description | Height:{{appearance.height}} | Weight:{{appearance.weight}}</h3>
+          <h3 class="confirm-power">Power: {{powerstats.power}}</h3>
+          <h3 class="confirm-combat">Combat: {{powerstats.combat}}</h3>
+          <h3 class="confirm-durability">Durability: {{powerstats.durability}}</h3>
+          <h3 class="confirm-strength">Strength: {{strength}}</h3>
+          <h3 class="confirm-speed">Speed: {{powerstats.speed}}</h3>
+          <h3 class="confirm-intelligence">intelligence: {{powerstats.intelligence}}</h3>
+          <button id="confirmButton">Confirm</button>
+          
+      </div>
+  {{/each}}
+</div>
+<script>
+
+const confirmButton = document.getElementById("confirmButton")
+confirmButton.addEventListener("click", console.log("CLICK")
+fetch("/api/heros/", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+name: `${heroId.name}`,
+description: `Also Known As: ${
+heroId.biography.full - name}\nSimilar Characters: ${heroId.biography.aliases.map((alias) => alias)}.`,
+power: heroId.powerstats.power,
+combat: heroId.powerstats.combat,
+durability: heroId.powerstats.durability,
+strength: heroId.powerstats.strength,
+speed: heroId.powerstats.speed,
+intelligence: heroId.powerstats.intelligence,
+}),});)
+</script>
+
+
+
+
+  <script src="/js/search.js"></script> --}}
