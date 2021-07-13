@@ -18,14 +18,20 @@
       <nav class="w3-right">
         {{#if logged_in}}<a href="/search" class="w3-bar-item w3-button">Search</a>{{/if}}
         {{#if logged_in}}<a href="/roster" id="rosterButton" class="w3-bar-item w3-button">Roster</a>{{/if}}
-        <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+        <a href="mailto:Email@email.com" class="w3-bar-item w3-button">Contact</a>
         {{#if logged_in}}<a class="w3-bar-item w3-button" id="logout">Logout</a>{{/if}}
         {{#if logged_in}}<a href="/home"></a>{{/if}}
       </nav>
      
-    </div>
   </div>
+</div>
+  <div class="container">
+  <div class="sliding-background"></div>
+    </div>
  
+  {{!-- <div class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+     <img id = "backgroundImg"  src="/img/p2-BG.jpg" alt="image" width="1500" height="1000">
+  </div> --}}
  
   <div class="w3-content w3-padding" style="max-width:1564px;margin-top:100px"> {{{body}}}
 </div>
@@ -33,9 +39,6 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
-  <div class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-     <img id = "backgroundImg"  src="/img/p2-BG.jpg" alt="image" width="1500" height="1000">
-  </div>
 </body>
 
 </html>

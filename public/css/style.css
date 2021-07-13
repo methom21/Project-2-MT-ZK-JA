@@ -12,19 +12,16 @@ html{
   line-height: 1.5;
 
 }
-.savebtn{
-min-width: 100px;
-min-height: 100px;
+.saveBtn{
+width: 35px;
+height: 25px;
+color: black;
 }
 .hide {
     display: none,
 }
 
-div h2 {
-font-size: large;
-font-weight: bolder;
-color: red;
-}
+
 
 #logout{color: red;}
 .hide-border{
@@ -36,11 +33,11 @@ color: red;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    
     /* margin-left: 25%;
     margin-right: 25%; */
-    margin-top: 100px;
-    margin-bottom: auto;
+    
+    
     position: relative;
     clip-path: 
     polygon(
@@ -65,9 +62,9 @@ form input {
 button {
     margin-bottom: 10px;
     background: transparent;
-    border:none;
+    border:2px solid black;
    
-    color: var(--buttonColor);
+    color: black;
     cursor: pointer;
     /* font-size: calc(var(--fontSize) * 1rem); */
     font-weight: bold;
@@ -160,7 +157,7 @@ a:hover {
 
 
 
- #heroImg {
+ Img {
    height: 170px;
    width: 120px;
  }
@@ -188,7 +185,10 @@ color: #fff;
  #speed{
   color: #fff;
  }
- #heroCard {
+ #heroCard, .roster-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    background-color: rgba(0, 0, 0, 0.5);
    clip-path: 
     polygon(
@@ -202,20 +202,46 @@ color: #fff;
       0% 100%      /* bottom left */
     );
     border: 3px solid #fff;
-    margin-top: 150px;
+    
  }
  #backgroundImg {
    position: absolute;
    
  }
  #search-form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    
-   position: relative;
-   margin-top: 200px;
-   margin-left: 45%;
   
  }
- .roster-container {
-   position: relative;
- }
- 
+ /* .roster-container {
+   display: flex ;
+   flex-direction: column-reverse;
+   justify-content: center;
+   align-items: center;
+ } */
+ .container {
+  overflow: hidden;
+}
+
+.sliding-background {
+  background: url("../img/p2-BG.jpg") repeat-x;
+  height: 560px;
+  width: 5076px;
+  animation: slide 60s linear infinite;
+}
+
+@keyframes slide{
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+.search-button {
+  border: 2px solid black;
+  color: #000;
+}
+
