@@ -1,6 +1,11 @@
 const inputSearch = document.getElementById("heroSearch");
-const searchButton = document.getElementById("searchButton");
-const removeHero = document.getElementById("heroJar");
+// const searchButton = document.getElementById("searchButton");
+
+// const removeHero = document.getElementById("heroJar");
+
+
+
+
 
 searchButton.addEventListener("click", function () {
   //user input
@@ -28,6 +33,7 @@ const getHero = async (heroName) => {
   while (response == null) {
     response = alert("Unable To Gather Hero Info");
   }
+};
 
   // const heroJar = document.getElementById("heroJar");
   // let heroCard = document.createElement("div");
@@ -78,7 +84,7 @@ const getHero = async (heroName) => {
 
   // await heroJar.append(heroCard);
   // let saveButton = document.getElementById(`saveButton${response.name}`)
-
+  
   await function saveButton() {
     fetch("/api/heros/", {
       method: "POST",
@@ -106,3 +112,7 @@ const getHero = async (heroName) => {
     // }
   // });
 };
+let saveBtn = document.getElementById(`saveBtn${response.name}`)
+saveBtn.addEventListener("click", function(){
+ saveButton();
+})
