@@ -1,0 +1,108 @@
+[
+{
+	"name":"Hulk",
+	"image":"https://www.superherodb.com/pictures2/portraits/10/100/83.jpg",
+	"description":"Description | Height:8'0,244 cm | Weight:1400 lb,630 kg",
+	"power":98,
+	"combat":85,
+	"durability":100,
+	"strength":100,
+	"speed":63,
+	"intelligence":88,
+	"sideline":false,
+	"user_id":1
+},
+{
+    "name": "Loki",
+    "image": "https://www.superherodb.com/pictures2/portraits/10/100/928.jpg",
+    "description": "Description | Height:6'4,193 cm | Weight:525 lb,236 kg",
+    "power": 100,
+    "combat": 60,
+    "durability": 85,
+    "strength": 63,
+    "speed": 46,
+    "intelligence": 88,
+    "sideline": false,
+    "user_id":1
+},
+{
+	"name":"Hulk",
+	"image":"https://www.superherodb.com/pictures2/portraits/10/100/83.jpg",
+	"description":"Description | Height:8'0,244 cm | Weight:1400 lb,630 kg",
+	"power":98,
+	"combat":85,
+	"durability":100,
+	"strength":100,
+	"speed":63,
+	"intelligence":88,
+	"sideline":false,
+	"user_id":2
+},
+{
+	"name":"Hulk",
+	"image":"https://www.superherodb.com/pictures2/portraits/10/100/83.jpg",
+	"description":"Description | Height:8'0,244 cm | Weight:1400 lb,630 kg",
+	"power":98,
+	"combat":85,
+	"durability":100,
+	"strength":100,
+	"speed":63,
+	"intelligence":88,
+	"sideline":false,
+	"user_id":3
+},
+{
+	"name":"Hulk",
+	"image":"https://www.superherodb.com/pictures2/portraits/10/100/83.jpg",
+	"description":"Description | Height:8'0,244 cm | Weight:1400 lb,630 kg",
+	"power":98,
+	"combat":85,
+	"durability":100,
+	"strength":100,
+	"speed":63,
+	"intelligence":88,
+	"sideline":false,
+	"user_id":4
+},
+{
+    "name": "Iron Man",
+    "image": "https://www.superherodb.com/pictures2/portraits/10/100/85.jpg",
+    "description": "Description | Height:6'6,198 cm | Weight:425 lb,191 kg",
+    "power": 100,
+    "combat": 64,
+    "durability": 85,
+    "strength": 85,
+    "speed": 58,
+    "intelligence": 100,
+    "sideline": false,
+    "user_id":4
+  },
+  {
+    "name": "Cyborg Superman",
+    "image": "https://www.superherodb.com/pictures2/portraits/10/100/667.jpg",
+    "description": "Description | Height:-,0 cm | Weight:- lb,0 kg",
+    "power": 100,
+    "combat": 80,
+    "durability": 100,
+    "strength": 93,
+    "speed": 92,
+    "intelligence": 75,
+    "sideline": false,
+    "user_id":4
+
+  },
+  {
+    "name": "Loki",
+    "image": "https://www.superherodb.com/pictures2/portraits/10/100/928.jpg",
+    "description": "Description | Height:6'4,193 cm | Weight:525 lb,236 kg",
+    "power": 100,
+    "combat": 60,
+    "durability": 85,
+    "strength": 63,
+    "speed": 46,
+    "intelligence": 88,
+    "sideline": false,
+    "user_id":4
+
+  }
+]
