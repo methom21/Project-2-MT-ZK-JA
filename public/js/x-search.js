@@ -108,9 +108,8 @@
   // speed.textContent = `Speed: ${response.powerstats.speed}`;
   // intelligence.textContent = `Intelligence: ${response.powerstats.intelligence}`;
   // description.textContent = `Also Known As: ${
-  //   response.biography.full - name
-  // }\nSimilar Characters: ${response.biography.aliases.map((alias) => alias)}.`;
-  // heroCard.append(
+  //   response.biography.full - name}\nSimilar Characters: ${response.biography.aliases.map((alias) => alias)}.`;
+  heroCard.append(
   //   name,
   //   heroImg,
   //   power,
