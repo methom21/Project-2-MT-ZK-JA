@@ -20,7 +20,7 @@ When logged in user may search for a hero or view all heros the user has already
 Users may add any hero they have searched for to their roster.
 
 
-![image](/img/Project-02.png)
+![image](/public/img/Project-02.png)
 
 
 TASK BREAKDOWN: Front End - Mikey | Back End - Joe and Zach
