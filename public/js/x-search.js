@@ -1,39 +1,80 @@
-const inputSearch = document.getElementById("heroSearch");
-// const searchButton = document.getElementById("searchButton");
+// router.get("/search/:id?", withAuth, async (req, res) => {
+//   if (!req.session.logged_in) return res.redirect("/");
+//   try {
+//     const heroId = req.params.id;
+//     let herosId = null;
+//     if (heroId) {
+//       console.log(heroId);
+//       const { data } = await axios.get(
+//         `https://superheroapi.com/api/${process.env.DB_APIKEY}/${heroId}`
+//       );
+//       console.log(data);
+//       herosId = data;
+//       console.log(`hello world`);
+//       console.log(herosId);
+//       console.log(`hello world`);
+      
+//     }
+      
+//     res.render("search", {
+//       logged_in: req.session.logged_in,
+//       herosId,
+//     });
 
-// const removeHero = document.getElementById("heroJar");
 
 
 
 
 
-searchButton.addEventListener("click", function () {
-  //user input
-  let SearchInput = document.getElementById("heroSearch").value;
-  getHero(SearchInput);
-  // removes the children of heroJar to insert new hero search
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const inputSearch = document.getElementById("heroSearch");
+// // const searchButton = document.getElementById("searchButton");
+
+// // const removeHero = document.getElementById("heroJar");
+
+
+
+
+
+// searchButton.addEventListener("click", function () {
+//   //user input
+//   let SearchInput = document.getElementById("heroSearch").value;
+//   getHero(SearchInput);
+//   // removes the children of heroJar to insert new hero search
   
-  // while (removeHero.firstChild) {
-  //   removeHero.removeChild(removeHero.lastChild);
+//   // while (removeHero.firstChild) {
+//   //   removeHero.removeChild(removeHero.lastChild);
 
-  //   clear();
-  // }
+//   //   clear();
+//   // }
 
-});
-// clears searched input
-let clear = () => {
-  return (document.getElementById("heroSearch").value = "");
-};
+// });
+// // clears searched input
+// let clear = () => {
+//   return (document.getElementById("heroSearch").value = "");
+// };
 
 
-const getHero = async (heroName) => {
-  let response = await fetch(`/api/heros/${heroName}`);
-  response = await response.json();
-  console.log(response)
-  while (response == null) {
-    response = alert("Unable To Gather Hero Info");
-  }
-};
+// const getHero = async (heroName) => {
+//   let response = await fetch(`/api/heros/${heroName}`);
+//   response = await response.json();
+//   console.log(response)
+//   while (response == null) {
+//     response = alert("Unable To Gather Hero Info");
+//   }
+// };
 
   // const heroJar = document.getElementById("heroJar");
   // let heroCard = document.createElement("div");
@@ -82,37 +123,37 @@ const getHero = async (heroName) => {
   //   saveButton
   // );
 
-  // await heroJar.append(heroCard);
-  // let saveButton = document.getElementById(`saveButton${response.name}`)
+//   // await heroJar.append(heroCard);
+//   let saveButton = document.getElementById(`saveButton${response.name}`)
   
-  await function saveButton() {
-    fetch("/api/heros/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: `${response.name}`,
-        description: `Also Known As: ${
-          response.biography.full - name
-        }\nSimilar Characters: ${response.biography.aliases.map(
-          (alias) => alias
-        )}.`,
-        power: response.powerstats.power,
-        combat: response.powerstats.combat,
-        durability: response.powerstats.durability,
-        strength: response.powerstats.strength,
-        speed: response.powerstats.speed,
-        intelligence: response.powerstats.intelligence,
-      }),
-    });
-  }
-    // removes the saved hero.
-    // while (removeHero.firstChild) {
-    //   removeHero.removeChild(removeHero.lastChild);
+//   await function saveButton() {
+//     fetch("/api/heros/", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({
+//         name: `${response.name}`,
+//         description: `Also Known As: ${
+//           response.biography.full - name
+//         }\nSimilar Characters: ${response.biography.aliases.map(
+//           (alias) => alias
+//         )}.`,
+//         power: response.powerstats.power,
+//         combat: response.powerstats.combat,
+//         durability: response.powerstats.durability,
+//         strength: response.powerstats.strength,
+//         speed: response.powerstats.speed,
+//         intelligence: response.powerstats.intelligence,
+//       }),
+//     });
+//   }
+//     // removes the saved hero.
+//     // while (removeHero.firstChild) {
+//     //   removeHero.removeChild(removeHero.lastChild);
      
-    // }
-  // });
-};
-let saveBtn = document.getElementById(`saveBtn${response.name}`)
-saveBtn.addEventListener("click", function(){
- saveButton();
-})
+//     // }
+//   // });
+// };
+// let saveBtn = document.getElementById(`saveBtn${response.name}`)
+// saveBtn.addEventListener("click", function(){
+//  saveButton();
+// })
