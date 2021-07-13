@@ -1,14 +1,14 @@
   {{#each rosterData}}
-  <div id = "roster-container">
-          <img src="{{i}}" alt="" id="roster-hero-img">
-          <h3 class="roster-description">Description | Height:{{appearance.height}} | Weight:{{appearance.weight}}</h3>
-          <h3 id="roster-power">Power: {{power}}</h3>
-          <h3 id="roster-combat">Combat: {{combat}}</h3>
-          <h3 id="roster-durability">Durability: {{durability}}</h3>
-          <h3 id="roster-strength">Strength: {{strength}}</h3>
-          <h3 id="roster-speed">Speed: {{speed}}</h3>
-          <h3 id="roster-intelligence">intelligence: {{intelligence}}</h3>
+  <div class = "roster-container">
+          {{!-- <img src="{{i}}" alt="" class="roster-hero-img"> --}}
+          {{!-- <h3 class="roster-description">Description | Height:{{appearance.height[0]}} | Weight:{{appearance.weight[0]}}</h3> --}}
+          <h3 class="roster-power">Power: {{power}}</h3>
+          <h3 class="roster-combat">Combat: {{combat}}</h3>
+          <h3 class="roster-durability">Durability: {{durability}}</h3>
+          <h3 class="roster-strength">Strength: {{strength}}</h3>
+          <h3 class="roster-speed">Speed: {{speed}}</h3>
+          <h3 class="roster-intelligence">intelligence: {{intelligence}}</h3>
           <img src="{{image}}">
-          <h2 id = "roster-name">{{name}}</h2>
+          <h2 class = "roster-name">{{name}}</h2>
       </div>
   {{/each}}
